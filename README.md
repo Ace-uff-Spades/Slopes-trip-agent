@@ -1,4 +1,4 @@
-# SlopeSync - Your AI-Powered Ski Trip Planning Assistant
+# 🏔️ SlopeSync - AI-Powered Ski Trip Planning Agent
 
 **Stop coordinating group trips through endless group chats. Start planning perfect ski trips in minutes.**
 
@@ -193,7 +193,7 @@ This is a private project, but suggestions and improvements are welcome!
 
 ## 📝 License
 
-Private project - All rights reserved
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
