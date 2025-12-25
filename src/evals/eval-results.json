@@ -1,0 +1,64 @@
+{
+  "timestamp": "2025-12-25T15:18:28.461061",
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "average_score": 1.0
+  },
+  "results": [
+    {
+      "test_case": 1,
+      "score": 1.0,
+      "details": {
+        "photo_quality": {
+          "has_placeholders": false,
+          "placeholder_count": 0,
+          "total_photos": 0,
+          "valid_photos": 0
+        },
+        "completeness": {
+          "is_complete": true,
+          "missing_fields": [],
+          "complete_count": 3
+        }
+      },
+      "passed": true
+    },
+    {
+      "test_case": 2,
+      "score": 1.0,
+      "details": {
+        "photo_quality": {
+          "has_placeholders": false,
+          "placeholder_count": 0,
+          "total_photos": 9,
+          "valid_photos": 9
+        },
+        "completeness": {
+          "is_complete": true,
+          "missing_fields": [],
+          "complete_count": 3
+        }
+      },
+      "passed": true
+    },
+    {
+      "test_case": 3,
+      "score": 1.0,
+      "details": {
+        "photo_quality": {
+          "has_placeholders": false,
+          "placeholder_count": 0,
+          "total_photos": 0,
+          "valid_photos": 0
+        },
+        "completeness": {
+          "is_complete": true,
+          "missing_fields": [],
+          "complete_count": 3
+        }
+      },
+      "passed": true
+    }
+  ]
+}

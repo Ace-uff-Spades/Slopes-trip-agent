@@ -1,0 +1,41 @@
+[
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "Find accommodation for a ski trip:\n\nResort: Killington\nLocation: Killington, Vermont, USA\n\nTrip Dates: 2025-12-27 to 2025-12-29\nCheck-in: 2025-12-27\nCheck-out: 2025-12-29\n\nGroup Size: 4 people\n\nFind 3 accommodation options that are available for the specified dates."
+      }
+    ],
+    "ideal": {
+      "options": [
+        { "availability": { "available": true } },
+        { "availability": { "available": true } },
+        { "availability": { "available": true } }
+      ],
+      "all_available": true,
+      "options_count": 3
+    }
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "Find accommodation for a ski trip:\n\nResort: Vail\nLocation: Vail, Colorado, USA\n\nTrip Dates: 2025-01-15 to 2025-01-18\nCheck-in: 2025-01-15\nCheck-out: 2025-01-18\n\nGroup Size: 6 people\n\nFind 3 accommodation options. Ensure all photo URLs are real, not placeholders."
+      }
+    ],
+    "ideal": { "no_placeholder_photos": true, "valid_photo_urls": true }
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "Find accommodation for a ski trip:\n\nResort: Aspen\nLocation: Aspen, Colorado, USA\n\nTrip Dates: 2025-02-14 to 2025-02-17\nCheck-in: 2025-02-14\nCheck-out: 2025-02-17\n\nGroup Size: 8 people\n\nFind 3 accommodation options. If initial search doesn't find 3 available, retry until you find 3."
+      }
+    ],
+    "ideal": {
+      "options_count": 3,
+      "all_available": true,
+      "retry_attempted_if_needed": true
+    }
+  }
+]

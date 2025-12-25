@@ -16,12 +16,13 @@ export const MOCK_RECOMMENDATIONS = [
 
 export const INITIAL_USER_STATE: UserState = {
   id: '', // Will be generated
-  name: 'Trip Organizer',
-  skill: 'Blue Square',
-  pass: 'Epic Pass',
-  budget: '$$',
-  availability: ['Feb 10', 'Feb 11', 'Feb 12'],
-  address: 'California',
+  name: '', // User must set this in preferences flow
+  skill: null, // User must set this in preferences flow
+  pass: null, // User must set this in preferences flow
+  budget: null, // User must set this in preferences flow
+  availability: [], // User must set this in preferences flow
+  impossibleDates: [],
+  address: '', // User must set this in preferences flow
   joinedPlans: [],
   planId: null,
 };

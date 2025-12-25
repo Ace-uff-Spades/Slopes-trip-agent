@@ -1,4 +1,4 @@
-import { PlanState, UserState, Recommendation, DestinationType } from '../lib/types';
+import { PlanState, UserState, Recommendation, DestinationType } from '@/lib/types';
 
 // Mock Database of Resorts
 const RESORTS_DB: Omit<Recommendation, 'votes' | 'skillMatch' | 'passSavings'>[] = [
@@ -27,6 +27,9 @@ const RESORTS_DB: Omit<Recommendation, 'votes' | 'skillMatch' | 'passSavings'>[]
 
 export const generateRecommendations = (plan: PlanState, userRegion: string): Recommendation[] => {
   const { destinationType } = plan.metadata;
+  
+  // Work with any number of members (including just 1)
+  const memberCount = plan.members.length || 1;
   
   // 1. Filter by Destination Type
   let candidates = RESORTS_DB.filter(resort => {
@@ -63,15 +66,21 @@ export const generateRecommendations = (plan: PlanState, userRegion: string): Re
     const skills = ['Excellent (Balanced)', 'Good (Intermediate Focus)', 'Fair (Beginner Heavy)', 'Challenging (Expert Only)'];
     const skillMatch = skills[Math.floor(Math.random() * skills.length)];
     
-    // Mock logic: Pass savings
-    const passes = ['Epic: 2/4 members free', 'Ikon: 1/4 members free', 'No Pass Savings', 'Epic: All members free'];
-    const passSavings = passes[Math.floor(Math.random() * passes.length)];
+    // Mock logic: Pass savings (adjust based on member count)
+    const passSavingsOptions = memberCount === 1 
+      ? ['Epic: 1/1 member free', 'Ikon: 1/1 member free', 'No Pass Savings']
+      : [`Epic: ${Math.floor(Math.random() * memberCount) + 1}/${memberCount} members free`, 
+         `Ikon: ${Math.floor(Math.random() * memberCount) + 1}/${memberCount} members free`, 
+         'No Pass Savings', 
+         `Epic: All ${memberCount} members free`];
+    const passSavings = passSavingsOptions[Math.floor(Math.random() * passSavingsOptions.length)];
 
     return {
       ...resort,
       skillMatch,
       passSavings,
       votes: 0,
+      votedBy: [],
       score: Math.random() // Shuffle
     };
   });
